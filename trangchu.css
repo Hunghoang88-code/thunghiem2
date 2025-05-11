@@ -1,0 +1,276 @@
+/* Reset & cơ bản */
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------- Header ------------------- */
+#nen {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: bisque;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 10px 40px;
+    transition: background-image 1s ease-in-out;
+}
+
+/* Logo bên trái */
+.logo img {
+    width: 165px;
+    height: 165px;
+    object-fit: cover;
+}
+
+/* ------------------- Menu ------------------- */
+.muc {
+    display: flex;
+    gap: 20px;
+}
+
+.muc a {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: x-large;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.muc a:hover {
+    color: black;
+    background-color: bisque;
+}
+
+/* Menu sản phẩm có dropdown */
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu .menu-toggle {
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: x-large;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+    padding: 10px 0;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    background-color: #eee;
+}
+
+.menu.open .dropdown {
+    display: block;
+}
+body{
+    background: linear-gradient(180deg, white, gray);
+
+}
+
+/* ------------------- Danh sách sản phẩm ------------------- */
+.sanpham {
+    margin: 50px 80px;
+    padding: 20px; /* Thêm padding cho phần tử */
+    border: 4px solid #3498db; /* Thêm border màu sắc */
+    border-radius: 15px; /* Bo góc cho border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng cho đẹp */
+
+}
+
+#danhsachnoithat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 0px; /* Thêm padding cho không gian thoáng đãng hơn */
+}
+.ghe {
+    width: 300px;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(89, 211, 211, 0.3);
+    font-size: x-large;
+    margin: 10px;
+    height: auto; /* Tăng chiều cao */
+    padding: 20px; /* Thêm padding bên trong */
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Thêm đổ bóng cho đẹp */    
+ }
+
+.ghe img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    border-color: black;
+    border: 1px solid;
+    
+}
+
+h2 {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid;
+    background-color: rgb(207, 200, 181);
+    border-radius: 10px; /* Bo góc cho tiêu đề */
+    color: #333; /* Màu chữ tối hơn để dễ đọc */
+}
+
+
+p {
+    margin-top: 20px;
+}
+
+button {
+    margin-top: auto;
+    border: solid aquamarine;
+    width: 150px;
+    font-size: large;
+    align-self: center;
+    padding: 10px;
+    background-color: rgb(96, 189, 189);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1); /* Phóng to nút khi hover */
+    background-color: rgb(23, 183, 201);
+    color: black;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Thêm đổ bóng khi hover */
+}
+
+.ghe:hover {
+    transform: scale(1.1); /* Phóng to 10% thay vì 5% */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3); /* Đổ bóng rõ hơn */
+    background-color: rgba(89, 211, 211, 0.5); /* Thay đổi màu nền */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Thêm hiệu ứng mượt */
+}
+/* ===== popup cho ảnh ===== */
+
+.img-popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .popup-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+/* ------------------- Footer ------------------- */
+footer {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: larger;
+    background-color: black;
+    color: white;
+}
+/* Biểu tượng cố định dưới góc phải */
+.icon-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 60px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1001;
+  }
+
+  /* Khung popup chứa iframe */
+  #iframe-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  #iframe-popup iframe {
+    width: 80%;
+    height: 80%;
+    border: none;
+    border-radius: 10px;
+  }
+
+  /* Nút đóng */
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
